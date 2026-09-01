@@ -1,0 +1,217 @@
+{
+  "graph": [
+    {
+      "id": "cat-001",
+      "type": "Category",
+      "name": "Electronics",
+      "products": [
+        "prod-001",
+        "prod-002",
+        "prod-003",
+        "prod-004"
+      ]
+    },
+    {
+      "id": "cat-002",
+      "type": "Category",
+      "name": "Desk Setup",
+      "products": [
+        "prod-005",
+        "prod-006",
+        "prod-007",
+        "prod-008"
+      ]
+    },
+    {
+      "id": "cat-003",
+      "type": "Category",
+      "name": "Accessories",
+      "products": [
+        "prod-009",
+        "prod-010",
+        "prod-011",
+        "prod-012"
+      ]
+    },
+    {
+      "id": "prod-001",
+      "type": "Product",
+      "name": "Wireless Mouse",
+      "price": 799,
+      "category": "cat-001",
+      "description": "Ergonomic 2.4GHz optical wireless mouse with silent clicks and compact design.",
+      "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&auto=format&fit=crop&q=80",
+      "stock": 25,
+      "tags": [
+        "accessories",
+        "wireless",
+        "mouse"
+      ]
+    },
+    {
+      "id": "prod-002",
+      "type": "Product",
+      "name": "Bluetooth Headphones",
+      "price": 2499,
+      "category": "cat-001",
+      "description": "Over-ear wireless headphones with deep bass, 30-hour battery, and built-in mic.",
+      "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",
+      "stock": 14,
+      "tags": [
+        "audio",
+        "wireless",
+        "headphones"
+      ]
+    },
+    {
+      "id": "prod-003",
+      "type": "Product",
+      "name": "Portable Bluetooth Speaker",
+      "price": 1499,
+      "category": "cat-001",
+      "description": "Water-resistant compact speaker delivering punchy sound and 12-hour playtime.",
+      "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&auto=format&fit=crop&q=80",
+      "stock": 18,
+      "tags": [
+        "audio",
+        "speaker",
+        "bluetooth"
+      ]
+    },
+    {
+      "id": "prod-004",
+      "type": "Product",
+      "name": "True Wireless Earbuds",
+      "price": 1899,
+      "category": "cat-001",
+      "description": "In-ear wireless earbuds with noise reduction and fast USB-C charging case.",
+      "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80",
+      "stock": 8,
+      "tags": [
+        "audio",
+        "wireless",
+        "earbuds"
+      ]
+    },
+    {
+      "id": "prod-005",
+      "type": "Product",
+      "name": "Mechanical Keyboard",
+      "price": 3299,
+      "category": "cat-002",
+      "description": "Compact mechanical gaming and typing keyboard with tactile switches and white backlighting.",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80",
+      "stock": 12,
+      "tags": [
+        "desk",
+        "keyboard",
+        "gaming"
+      ]
+    },
+    {
+      "id": "prod-006",
+      "type": "Product",
+      "name": "Wooden Monitor Stand",
+      "price": 1299,
+      "category": "cat-002",
+      "description": "Natural solid wood monitor riser with bottom storage clearance for keyboard.",
+      "image": "https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=600&auto=format&fit=crop&q=80",
+      "stock": 9,
+      "tags": [
+        "desk",
+        "wood",
+        "organization"
+      ]
+    },
+    {
+      "id": "prod-007",
+      "type": "Product",
+      "name": "Desk Mat Large (Felt)",
+      "price": 699,
+      "category": "cat-002",
+      "description": "Extended felt wool desk pad with anti-slip base for smooth workspace protection.",
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80",
+      "stock": 30,
+      "tags": [
+        "desk",
+        "accessories",
+        "felt"
+      ]
+    },
+    {
+      "id": "prod-008",
+      "type": "Product",
+      "name": "Adjustable Laptop Stand",
+      "price": 899,
+      "category": "cat-002",
+      "description": "Foldable aluminum ergonomic stand with multiple height angles for laptops up to 16\".",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80",
+      "stock": 20,
+      "tags": [
+        "desk",
+        "laptop",
+        "ergonomic"
+      ]
+    },
+    {
+      "id": "prod-009",
+      "type": "Product",
+      "name": "Smart Fitness Band",
+      "price": 1999,
+      "category": "cat-003",
+      "description": "Activity tracker with heart rate monitor, step counter, sleep tracker, and OLED screen.",
+      "image": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=600&auto=format&fit=crop&q=80",
+      "stock": 16,
+      "tags": [
+        "fitness",
+        "tracker",
+        "wearables"
+      ]
+    },
+    {
+      "id": "prod-010",
+      "type": "Product",
+      "name": "Braided USB-C Cable (2m)",
+      "price": 399,
+      "category": "cat-003",
+      "description": "Durable nylon braided 60W fast-charging cable with reinforced stress points.",
+      "image": "https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?w=600&auto=format&fit=crop&q=80",
+      "stock": 50,
+      "tags": [
+        "cable",
+        "charging",
+        "accessories"
+      ]
+    },
+    {
+      "id": "prod-011",
+      "type": "Product",
+      "name": "Minimalist Analog Watch",
+      "price": 2799,
+      "category": "cat-003",
+      "description": "Clean dial wristwatch with stainless steel case and genuine leather strap.",
+      "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80",
+      "stock": 5,
+      "tags": [
+        "watch",
+        "minimalist",
+        "accessories"
+      ]
+    },
+    {
+      "id": "prod-012",
+      "type": "Product",
+      "name": "Stainless Steel Water Bottle",
+      "price": 649,
+      "category": "cat-003",
+      "description": "Double-wall insulated bottle keeping beverages cold for 24 hours or hot for 12 hours.",
+      "image": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=600&auto=format&fit=crop&q=80",
+      "stock": 0,
+      "tags": [
+        "lifestyle",
+        "travel",
+        "bottle"
+      ]
+    }
+  ]
+}

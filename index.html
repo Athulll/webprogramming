@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopCraft - A minimal client-side store with instant booking.">
+  <title>ShopCraft</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="brand" id="brand-link">
+        <span class="brand-name">ShopCraft</span>
+      </a>
+
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search products..." autocomplete="off">
+        <button id="clear-search-btn" class="clear-btn" style="display: none;" title="Clear search">&times;</button>
+      </div>
+
+      <div class="bookings-indicator" id="bookings-indicator">
+        <span>Booked:</span>
+        <strong id="booked-count">0</strong>
+      </div>
+    </div>
+  </header>
+
+  <nav class="category-nav" aria-label="Product Categories">
+    <div class="container">
+      <div class="category-list" id="category-list">
+        <button class="cat-btn active" data-category="all">All</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main container">
+
+    <section class="controls-bar">
+      <div class="controls-info">
+        <h1 class="page-title" id="page-title">All Products</h1>
+        <span class="item-count" id="item-count">0 items</span>
+      </div>
+
+      <div class="controls-actions">
+        <label for="sort-select" class="sort-label">Sort by:</label>
+        <select id="sort-select" class="sort-select">
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A to Z</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="products-section">
+      <div class="product-grid" id="product-grid">
+      </div>
+
+      <div class="no-results" id="no-results" style="display: none;">
+        <h3>No products found</h3>
+        <p id="no-results-text">Try adjusting your search or category filter.</p>
+        <button id="reset-filter-btn" class="btn btn-secondary">Reset Filters</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 ShopCraft.</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
