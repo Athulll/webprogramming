@@ -125,6 +125,125 @@ body {
   padding: 24px 0 48px;
 }
 
+.admin-panel {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.admin-toolbar,
+.admin-actions,
+.login-form,
+.item-form-actions {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.login-form label,
+.item-form label {
+  display: flex;
+  flex: 1 1 180px;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.login-form input,
+.item-form input,
+.item-form select,
+.item-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  font: inherit;
+  color: #0f172a;
+}
+
+.login-form input {
+  min-width: 150px;
+}
+
+.admin-actions {
+  align-items: center;
+}
+
+.admin-actions p {
+  margin-right: auto;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.btn-primary,
+.btn-edit {
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.auth-message {
+  margin-top: 8px;
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+.auth-message.error {
+  color: #b91c1c;
+}
+
+.item-form-panel {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.item-form-panel[hidden],
+.login-form[hidden],
+.admin-actions[hidden] {
+  display: none;
+}
+
+.item-form-panel h2 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.item-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.item-form-wide {
+  grid-column: 1 / -1;
+}
+
+.item-form textarea {
+  resize: vertical;
+}
+
+.item-form-actions {
+  justify-content: flex-end;
+}
+
 .controls-bar {
   display: flex;
   align-items: center;
@@ -271,6 +390,14 @@ body {
   margin-top: auto;
 }
 
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .product-price {
   font-size: 1.1rem;
   font-weight: 700;
@@ -305,6 +432,12 @@ body {
 
 .btn-cancel:hover {
   background: #fecaca;
+}
+
+.btn-edit {
+  padding: 7px 10px;
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .no-results {
@@ -377,5 +510,9 @@ body {
 
   .product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .item-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

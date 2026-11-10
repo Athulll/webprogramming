@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^api/index\.php$ - [L]
+RewriteRule ^api/(?:items(?:/[0-9]+)?|session|login|logout)$ api/index.php [QSA,L]
