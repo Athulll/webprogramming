@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/shopcraft/data.schema.json",
+  "title": "ShopCraft product graph",
+  "description": "RO-Crate-aligned graph of category and product entities served by api.php.",
+  "type": "object",
+  "required": ["graph"],
+  "properties": {
+    "graph": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/category" },
+          { "$ref": "#/$defs/product" }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "category": {
+      "type": "object",
+      "required": ["id", "type", "name", "products"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "Category" },
+        "name": { "type": "string", "minLength": 1 },
+        "products": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "additionalProperties": false
+    },
+    "product": {
+      "type": "object",
+      "required": ["id", "type", "name", "price", "category", "description", "image", "stock", "tags"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "Product" },
+        "name": { "type": "string", "minLength": 1 },
+        "price": { "type": "number", "minimum": 0 },
+        "category": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "image": { "type": "string", "format": "uri" },
+        "stock": { "type": "integer", "minimum": 0 },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

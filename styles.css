@@ -166,6 +166,29 @@ body {
   gap: 20px;
 }
 
+.data-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 16px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #475569;
+  text-align: center;
+}
+
+.data-status[hidden] {
+  display: none;
+}
+
+.data-status.error {
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
 .product-card {
   background: #fff;
   border: 1px solid #e2e8f0;

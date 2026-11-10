@@ -57,6 +57,11 @@
     </section>
 
     <section class="products-section">
+      <div class="data-status" id="data-status" role="status" aria-live="polite" hidden>
+        <p id="data-status-message">Loading products...</p>
+        <button id="retry-load-btn" class="btn btn-secondary" type="button" hidden>Try again</button>
+      </div>
+
       <div class="product-grid" id="product-grid">
       </div>
 

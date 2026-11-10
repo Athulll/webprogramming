@@ -20,6 +20,9 @@ const resetFilterBtn = document.getElementById('reset-filter-btn');
 const brandLink = document.getElementById('brand-link');
 const bookedCountEl = document.getElementById('booked-count');
 const toastEl = document.getElementById('toast');
+const dataStatus = document.getElementById('data-status');
+const dataStatusMessage = document.getElementById('data-status-message');
+const retryLoadBtn = document.getElementById('retry-load-btn');
 
 function formatPrice(amount) {
   return '₹' + Number(amount).toLocaleString('en-IN');
@@ -34,12 +37,36 @@ function showToast(message) {
 }
 
 async function loadStoreData() {
+  dataStatus.hidden = false;
+  dataStatus.classList.remove('error');
+  dataStatusMessage.textContent = 'Loading products...';
+  retryLoadBtn.hidden = true;
+  productGrid.style.display = 'none';
+  noResults.style.display = 'none';
+
   try {
-    const response = await fetch('data.json');
+    const response = await fetch('api.php', {
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!response.ok) {
+      throw new Error(`The server returned ${response.status}.`);
+    }
+
     const data = await response.json();
 
     if (!data.graph || !Array.isArray(data.graph)) {
       throw new Error('Invalid graph structure');
+    }
+
+    const categoriesInData = data.graph.filter(item => item.type === 'Category');
+    const productsInData = data.graph.filter(item => item.type === 'Product');
+    if (
+      categoriesInData.length + productsInData.length !== data.graph.length ||
+      categoriesInData.some(item => !item.id || !item.name) ||
+      productsInData.some(item => !item.id || !item.name || !item.category || !Number.isFinite(item.price))
+    ) {
+      throw new Error('The server returned data in an unsupported format.');
     }
 
     products = [];
@@ -60,9 +87,13 @@ async function loadStoreData() {
     renderCategories();
     renderProducts();
     updateBookingsCount();
+    dataStatus.hidden = true;
   } catch (error) {
-    console.error('Error loading data.json:', error);
-    productGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #dc2626;">Failed to load products. Please check data.json.</p>';
+    console.error('Error loading products from api.php:', error);
+    dataStatus.hidden = false;
+    dataStatus.classList.add('error');
+    dataStatusMessage.textContent = 'Products could not be loaded. Check your connection and try again.';
+    retryLoadBtn.hidden = false;
   }
 }
 
@@ -241,6 +272,8 @@ function handleCancelBooking(productId) {
 }
 
 function setupListeners() {
+  retryLoadBtn.addEventListener('click', loadStoreData);
+
   searchInput.addEventListener('input', (e) => {
     searchQuery = e.target.value;
     clearSearchBtn.style.display = searchQuery ? 'block' : 'none';
